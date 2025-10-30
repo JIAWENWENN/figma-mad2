@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Progress Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4A90E2",
+              "background-light": "#F4F6F8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm">
+<div class="flex size-12 shrink-0 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Profile picture of James Williams" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGkxJzQt3PReQWW7A32gsCVB7PQvw6rf19C5hI-ZsAynuobuL2GakGX1EBMGVKQKM7D80O2VSd_PleHnXFCloKXA9lerO-xKxkLARJpCMnmHMB7TrcQ9OgZTRK9Em5A50uYibF-5OM707ah77TH5gJgxd7M1W8JtKaqlZHizwT8owZ8iQvQ3nwLm_9VaPt3QSOmpmIGY0xKjfnNvoT0uhAqx5s951155cpqLEgv6Lstw-n46C_NJstWWAxBSy2P1noBnhFOELxSw0");'></div>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Dashboard</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+<!-- Chips / Student Selector -->
+<div class="flex gap-3 px-4 py-2">
+<button class="flex h-10 flex-1 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-gray-800 pl-4 pr-3">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">James Williams</p>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">expand_more</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-gray-800 px-4">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">2023-2024</p>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">expand_more</span>
+</button>
+</div>
+<!-- Section Header: Overall Progress -->
+<h3 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Overall Progress</h3>
+<!-- Overall Progress Card -->
+<div class="flex flex-col gap-4 p-4 rounded-xl bg-gray-200/50 dark:bg-gray-800/50 mx-4">
+<div class="flex items-center justify-center">
+<div class="relative size-40">
+<svg class="size-full" height="36" viewbox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-gray-300 dark:text-gray-700" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-current text-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="25" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-bold text-gray-900 dark:text-white">75%</span>
+<span class="text-sm text-gray-600 dark:text-gray-400">Completed</span>
+</div>
+</div>
+</div>
+<div class="flex justify-around gap-4">
+<div class="flex flex-col items-center gap-1 text-center">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Courses Completed</p>
+<p class="text-gray-900 dark:text-white tracking-light text-xl font-bold leading-tight">12/18</p>
+</div>
+<div class="border-l border-gray-300 dark:border-gray-700"></div>
+<div class="flex flex-col items-center gap-1 text-center">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Average Score</p>
+<p class="text-gray-900 dark:text-white tracking-light text-xl font-bold leading-tight">88%</p>
+</div>
+</div>
+</div>
+<!-- Section Header: Progress by Subject -->
+<div class="flex items-center justify-between px-4 pb-2 pt-6">
+<h3 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Progress by Subject</h3>
+<a class="text-sm font-medium text-primary" href="#">See All</a>
+</div>
+<!-- Subject Cards -->
+<div class="flex flex-col gap-3 px-4">
+<!-- Math Card -->
+<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-gray-800/80 p-4 border border-transparent dark:border-gray-700/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-1">
+<p class="font-semibold text-gray-900 dark:text-white">Mathematics</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">A-</p>
+</div>
+<div class="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-2 rounded-full bg-green-500" style="width: 92%;"></div>
+</div>
+</div>
+</div>
+<!-- Science Card -->
+<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-gray-800/80 p-4 border border-transparent dark:border-gray-700/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-500">
+<span class="material-symbols-outlined">science</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-1">
+<p class="font-semibold text-gray-900 dark:text-white">Science</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">B+</p>
+</div>
+<div class="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-2 rounded-full bg-green-500" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+<!-- English Card -->
+<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-gray-800/80 p-4 border border-transparent dark:border-gray-700/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-500">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-1">
+<p class="font-semibold text-gray-900 dark:text-white">English</p>
+<p class="text-sm font-bold text-orange-500">C+</p>
+</div>
+<div class="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-2 rounded-full bg-orange-500" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Header: Quick Links -->
+<h3 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-6">Quick Links</h3>
+<!-- Quick Links Buttons -->
+<div class="grid grid-cols-2 gap-3 px-4">
+<button class="flex flex-col items-center justify-center gap-2 rounded-lg bg-primary/10 dark:bg-primary/20 p-4 text-center">
+<span class="material-symbols-outlined text-primary text-3xl">assessment</span>
+<p class="text-sm font-semibold text-primary">Full Report</p>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-lg bg-gray-200 dark:bg-gray-800 p-4 text-center">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-3xl">event_upcoming</span>
+<p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Assignments</p>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-lg bg-gray-200 dark:bg-gray-800 p-4 text-center">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-3xl">co_present</span>
+<p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Contact Teacher</p>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-lg bg-gray-200 dark:bg-gray-800 p-4 text-center">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-3xl">calendar_month</span>
+<p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Attendance</p>
+</button>
+</div>
+<div class="h-24"></div> <!-- Spacer for bottom nav -->
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-10 border-t border-gray-200 dark:border-gray-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="grid grid-cols-4 h-20 items-center justify-items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-xs font-medium">Tasks</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-xs font-medium">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>
